@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Popup Example</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Open Popup</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+   
+
+<!--demo wbsite design-->
+<br>
+<br>
+<br>
+<form action="/submit-your-form-handler" method="POST">
+    <label for="fruit" style="color:gray">Project <br> </label>
+    <select id="fruit" name="fruit" style="width: 300px">
+        <option value="select">Demo website design</option>
+        <option value="banana">Banana</option>
+        <option value="orange">Orange</option>
+        <option value="mango">Mango</option>
+    </select>
+        
+    <br><br>
+
+    <label for="car" style="color:gray">Task <br> </label>
+    <select id="car" name="car" style="width: 300px">
+        <option value="toyota">select task</option>
+        <option value="ford">Ford</option>
+        <option value="honda">Honda</option>
+        <option value="tesla">Tesla</option>
+    </select>
+
+<br>
+<br>
+<style>
+
+  
+  
+  div {
+    border-bottom-style: solid;
+    border-bottom-color: #ccc;
+  }
+  </style>
+  
+  
+  
+ <br>
+ <br>
+ <br>
+
+  <div style="color:#ccc;">Note</div>
+<br>
+
+
+    <form action="/action_page.php">
+      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+      <label for="vehicle1"> Is Billable? </label><br>
+      </form>
+
+      <br> 
+      <br>
+
+<!--timer-->
+
+
+
+<div id="timer" class="topleft" style="color:aliceblue">00:00:00</div>
+<button onclick="stopTimer()">Cancel</button>
+<button onclick="startTimer()">Start Timer</button>
+
+
+<style>
+
+.topleft {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 18px;
+}
+
+</style>
+
+
+
+<script>
+    let startTime;
+    let elapsedTime = 0;
+    let timerInterval;
+
+    function timeToString(time) {
+        let diffInHrs = time / 3600000;
+        let hh = Math.floor(diffInHrs);
+
+        let diffInMin = (diffInHrs - hh) * 60;
+        let mm = Math.floor(diffInMin);
+
+        let diffInSec = (diffInMin - mm) * 60;
+        let ss = Math.floor(diffInSec);
+
+        let formattedMM = mm.toString().padStart(2, "0");
+        let formattedSS = ss.toString().padStart(2, "0");
+        let formattedHH = hh.toString().padStart(2, "0");
+
+        return `${formattedHH}:${formattedMM}:${formattedSS}`;
+    }
+
+    function printTime() {
+        const time = Date.now() - startTime + elapsedTime;
+        document.getElementById('timer').innerHTML = timeToString(time);
+    }
+
+    function startTimer() {
+        startTime = Date.now();
+        timerInterval = setInterval(printTime, 1000);
+    }
+
+    function stopTimer() {
+        clearInterval(timerInterval);
+        elapsedTime = 0;
+        document.getElementById('timer').innerHTML = "00:00:00";
+    }
+</script>
+
+
+
+  </div>
+
+
+</div>
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
